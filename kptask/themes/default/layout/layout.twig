@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ pageTitle }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/reset.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/css/mqueries.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/css/bs/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/css/bs/bootstrap-select.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/js/jqui/jquery-ui.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/js/jqui/jquery-ui.structure.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/js/jqui/jquery-ui.theme.css" media="screen"/>
+    <link rel="stylesheet" href="/resources/css/mainboard.css?{{ date().timestamp }}" media="screen"/>
+    {% block cssinclude %}{% endblock %}
+
+    <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/resources/js/bs/bootstrap.js"></script>
+    <script type="text/javascript" src="/resources/js/bs/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/resources/js/jqui/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="/resources/js/global.js?{{ date().timestamp }}"></script>
+    {% block jsinclude %}{% endblock %}
+</head>
+<body>
+    <div id="main-container" class="st-main-container">
+        {{ include('partials/global/header.twig') }}
+
+        <!-- output flash messages -->
+        {% if messages is defined %}
+            {{ messages|raw }}
+        {% endif %}
+
+        <div id="sl-popup-modal" class="st-popup-modal hdn"></div>
+
+        {% block content  %} {% endblock %}
+
+        <div id="footer-container" class="st-footer-container">
+            <div class="st-footer">
+                <span class="st-footer-text valign">Developed by Goran Damjanovic</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

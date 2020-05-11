@@ -1,0 +1,70 @@
+{% extends 'layout/layout.twig'%}
+{% block jsinclude %}
+	<script type="text/javascript" src="/resources/js/form.js"></script>
+{% endblock %}
+{% block content  %}
+
+<div id="page-container" class="st-page-container">
+    <div id="page-content-wrapper" class="st-page-content-wrapper">
+        <div class="st-section-container">
+            <div class="st-section-header">
+                <span class="st-section-title">Register form</span>
+                <div class="separator"></div>
+            </div>
+            <div class="st-section-content">
+                <div class="st-userform-container">
+                    {#<div class="st-userform-title-container">
+                        <div class="st-userform-title">User Form</div>
+                    </div>#}
+                    <div class="st-userform-content">
+                        <form id="sl-adduser-form" action="/register/create" method="post" name="userform">
+                                <div class="st-form-field-container">
+                                    <span class="st-form-field-info"></span>
+                                    <span class="st-form-field-requ"></span>
+                                    <div class="st-form-label-container">
+                                        <span class="st-form-label">Email</span>
+                                    </div>
+                                    <div class="st-form-input-container">
+                                        <input xrequired class="st-form-input required" type="text" name="email" value="{% if data['email'] is defined %}{{ data['email'] }}{% endif %}" />
+                                    </div>
+                                </div>
+                                <div class="st-form-field-container">
+                                    <span class="st-form-field-info"></span>
+                                    <span class="st-form-field-requ"></span>
+                                    <div class="st-form-label-container">
+                                        <span class="st-form-label">Password</span>
+                                    </div>
+                                    <div class="st-form-input-container">
+                                        {#<input required class="sl-form-input st-form-input" type="password" name="password" value="" />#}
+                                        <input xrequired class="st-form-input" type="password" name="password" value="" />
+                                    </div>
+                                </div>
+                                <div class="st-form-field-container">
+                                    <span class="st-form-field-info"></span>
+                                    <span class="st-form-field-requ"></span>
+                                    <div class="st-form-label-container">
+                                        <span class="st-form-label">Confirm Password</span>
+                                    </div>
+                                    <div class="st-form-input-container">
+                                        {#<input required class="sl-form-input st-form-input" type="password" name="password2" value="" />#}
+                                        <input xrequired class="st-form-input" type="password" name="password2" value="" />
+                                    </div>
+                                </div>
+                                <div class="st-form-control-container clear tar">
+                                    <span id="sl-form-input-msg" class="sl-form-input-msg st-form-input-msg"></span>
+{#                                    <span id="sl-adduser-cancel" class="st-btn-bordered">CANCEL</span>#}
+                                    <span id="sl-adduser" class="st-btn-confirm">REGISTER</span>
+                                </div>
+                            </div>
+
+                            {# flag for saving #}
+                            <input type="hidden" name="register" value="true" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{
+  "name": "kptask",
+  "license": "proprietary",
+  "type": "project",
+  "require": {
+    "php": ">=7",
+    "ext-intl": "*",
+    "symfony/process": "*",
+    "guzzlehttp/guzzle": "^6.1",
+    "guzzlehttp/psr7": "*",
+    "zendframework/zend-json": "*",
+    "zendframework/zend-log": "*",
+    "zendframework/zend-config": "*",
+    "zendframework/zend-session": "*",
+    "zendframework/zend-mail": "*",
+    "zendframework/zend-mime": "*",
+    "zendframework/zend-permissions-acl": "*",
+    "zendframework/zend-cache": "*",
+    "firephp/firephp-core": "v0.4.0",
+    "monolog/monolog": "^1.18",
+    "php-di/php-di": "^5.2",
+    "nikic/fast-route": "0.8.0",
+    "twig/twig": "*",
+    "twig/extensions": "*",
+    "tamtamchik/simple-flash": "^1.2",
+    "league/tactician": "*",
+    "firebase/php-jwt": "*",
+    "sunra/php-simple-html-dom-parser": "1.5.2"
+  },
+  "require-dev": {
+    "mikey179/vfsStream": "*",
+    "phpunit/phpunit": "*",
+    "pdepend/pdepend": "*",
+    "phpmd/phpmd": "*",
+    "phpunit/dbunit": "*",
+    "robmorgan/phinx": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kptask\\Admin\\": "src/Admin/src",
+      "Kptask\\Core\\": "src/Core/src",
+      "Kptask\\User\\": "src/User/src"
+    }
+  },
+ "autoload-dev": {
+   "psr-4": {
+      "Kptask\\AdminTest\\": "src/Admin/test",
+      "Kptask\\CoreTest\\": "src/Core/test",
+      "Kptask\\UserTest\\": "src/User/test"
+   }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "bin-dir": "vendor/bin/"
+  }
+}

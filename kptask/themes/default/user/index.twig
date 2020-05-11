@@ -1,0 +1,45 @@
+{% extends 'layout/layout.twig'%}
+{% block content %}
+
+<div id="page-container" class="st-page-container">
+    <div id="page-content-wrapper" class="st-page-content-wrapper">
+		{#<div id="left-col" class="st-left-column">#}
+			<div class="st-section-container">
+				<div class="st-section-header">
+					<span class="st-section-title">User list</span>
+				</div>
+				<div class="st-section-content">
+					<span id="sl-add-form" class="st-btn-confirm ml10 mt20i fli mb20i">CREATE NEW USER</span>
+					<div class="st-table-container clear ofa">
+						<section class="st-table">
+							<header class="st-thead">
+								<div class="st-th st-th-gray">User ID</div>
+								<div class="st-th st-th-gray">Email</div>
+							</header>
+							<div class="st-tbody">
+							{% for user in users %}
+								<div class="st-tr">
+									<div class="st-td mnw70">{{ user.userId }}</div>
+									<div class="st-td mnw70">{{ user.email }}</div>
+									<div class="st-td mnw70">
+										<a href="/user/form/{{ user.userId }}" title="Edit">Edit</a>
+										<a class="sl-user-delete" id="{{ user.userId }}" title="Delete">Delete</a>
+									</div>
+								</div>
+							{% endfor %}
+							</div>
+						</section>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		{#</div>#}
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<form id="sl-user-delete-form" action="/user/delete" method="post">
+	<input id="sl-user-delete-id required" type="hidden" name="userId" value="" />
+</form>
+{% endblock %}

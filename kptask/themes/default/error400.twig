@@ -1,0 +1,12 @@
+{% extends 'layout/layout.twig'%}
+{% block content %}
+
+<h1>Error 400; A Client error occurred.</h1>
+
+<p>I'm sorry, but I received a bad request, and I cannot continue.</p>
+
+<p>Error message received was:  <br /> {{ error }} </p>
+
+{#<p>Additional stack trace: {{ dump(trace) }} </p>#}
+
+{% endblock %}

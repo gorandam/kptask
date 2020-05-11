@@ -1,0 +1,33 @@
+{% extends 'layout/login.twig'%}
+{% block content %}
+
+<div class="st-loginform-container">
+	<div class="st-loginform-title-container">
+		<div class="st-loginform-title">
+			Kptask
+		</div>
+	</div>
+	<div class="st-loginform-content">
+		<form id="add-edit-form" class="add-edit-form form" name="add-edit-form" action="/login/login" method="post">
+			<div class="st-form-section-container">
+				<div class="st-form-field-container">
+					<span class="st-form-field-info"></span>
+					<span class="st-form-field-requ"></span>
+					<input id="sl-uname" class="sl-form-input st-form-input" type="text" name="email" placeholder="Email" value="" />
+				</div>
+				<div class="st-form-field-container">
+					<span class="st-form-field-info"></span>
+					<span class="st-form-field-requ"></span>
+					<input id="sl-upass" class="sl-form-input st-form-input" type="password" name="password" placeholder="Password" value="" />
+				</div>
+				<div class="st-form-control-container clear tar">
+					<span id="sl-form-input-msg" class="sl-form-input-msg st-form-input-msg"></span>
+					{#<span id="sl-loginform-submit" class="st-form-submit">Login</span>#}
+					<input type="submit" value="Login" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

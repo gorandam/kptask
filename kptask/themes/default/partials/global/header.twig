@@ -1,0 +1,20 @@
+<div id="main-header" class="st-main-header">
+    <div class="st-logo-container valign">
+        Kptask
+    </div>
+    {% if userId is defined %}
+    <div class="st-logout-container valign"><a href="/login/logout" title="Log out">Log out</a></div>
+    {% else %}
+    <div class="st-logout-container valign"><a href="/login/index" title="Login">Login</a></div>
+    <div class="st-logout-container valign"><a href="/register/index" title="Register">Regirster</a></div>
+    {% endif %}
+</div>
+<div id="main-navigation" class="st-main-navigation">
+    {% if userId is defined %}
+    <div class="st-navigation-container" style="position: relative;">
+        <a href="/user/index" class="st-navigation-button {% if data.case == 'index' %}st-navigation-active{% endif %} ">
+            <span class="valign" title="User index">User index</span>
+        </a>
+    </div>
+     {% endif %}
+</div>

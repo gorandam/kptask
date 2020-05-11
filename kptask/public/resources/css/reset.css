@@ -1,0 +1,106 @@
+/* Set box-sizing for all elements(including :pseudo) */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/* End */
+/* Zero-out margins and paddings and set font styles defaults (browsers tend to vary on this) */
+/* Suggestion: font-size:62.5%; -> Now we have 1em = 10px, so 1..1em=11px etc */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	cursor: default;
+}
+/* End */
+/* Define focus styles! */
+:focus {
+	outline: 0;
+}
+/* End */
+body {
+	line-height: 1;
+	font-size: 88%;
+	color: black;
+	background: white;
+}
+/* End */
+/* Set default margins and padding for headings */
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	padding: .6em 0;
+	margin: 0 15px;
+}
+/* End */
+/* Remove the list-style-type from lists */
+ul, ol {
+	list-style: none;
+}
+/* End */
+/* Tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+/* End */
+/* Set defalt image border */
+img {
+	border: 0;
+}
+/* End */
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+a:hover, a:focus {
+    /*color: #23527c;*/
+	cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Bootstrap-select shit */
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+button,
+select {
+	text-transform: none;
+}
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+/* End */

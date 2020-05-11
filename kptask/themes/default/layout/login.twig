@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ pageTitle }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/bs/bootstrap.css" media="screen"/>
+	<!-- TODO: Extract loginform css to separate file  -->
+    <link rel="stylesheet" href="/resources/css/mainboard.css?{{ date().timestamp }}" media="screen"/>
+
+    <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/resources/js/global.js?{{ date().timestamp }}"></script>
+
+</head>
+<body>
+    <div id="main-container" class="st-main-container">
+
+        <!-- output flash messages -->
+        {% if messages is defined %}
+            {{ messages|raw }}
+        {% endif %}
+
+        {% block content  %} {% endblock %}
+
+    </div>
+</body>
+</html>
